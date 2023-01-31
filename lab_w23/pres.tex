@@ -1,0 +1,138 @@
+%%%%%%%%%%%%%%%%%%%%
+% Header Stuff
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.3in]{geometry}
+\usepackage{setspace,graphicx,multirow,cite}
+
+% Title/Sections Package
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+\titlespacing*{\section}{0pt}{1em}{0pt}
+\titlespacing*{\subsection}{0pt}{1em}{0pt}
+\titlespacing*{\subsubsection}{0pt}{1em}{0pt}
+
+% Linguistics Packages
+\usepackage{xcolor}
+\usepackage{enumitem,float}
+\usepackage[linguistics]{forest}
+\usepackage{gb4e}
+
+
+% Title
+\title{{\normalsize\bfseries {Prediction of Japanese Q-Particles}}}
+\author{\normalsize\bfseries {}}
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Main Document
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\section{Detecting Structural Prediction}
+My work has been concerned with structural prediction by the parser. Namely,
+\textbf{what}, \textbf{when}, \textbf{why}? But verifying that the parser is performing 
+structural prediction in online processing is *hard*. Several reasons:
+
+\begin{itemize}
+    \item Surprise ($>$RT) and facilitation ($<$RT) effects often have multiple explanations.
+    \item A common explanation is that predictive effects are actually due to integration.
+\end{itemize}
+
+\noindent
+Consider the following example:
+\begin{exe}
+    \ex
+    \begin{xlist}
+        \ex $AuxP \rightarrow [Aux \hspace{0.1cm} VP]$
+        \ex $VP \rightarrow V'$
+        \ex $ V' \rightarrow  [(Adv) \hspace{0.1cm} V]$
+        \ex $V'\rightarrow [V \hspace{0.1cm} NP]$
+    \end{xlist}
+\end{exe}
+``He has (really) (never) (...) gone to Europe.''\\
+
+\noindent
+Consider we observe a facilitation at \textit{gone}. Is it due to parser's prediction triggered by
+\textit{has}? Or, is it because \textit{gone}....? Need an experiment with prediction and integration
+saying different things.
+
+
+
+\section{Wh-Licensing w/ Q-particles}
+In Japanese wh-interrogative sentences, a wh-phrase must be licensed (c-commanded)
+by a verbal suffix -ka or -no (a Question-particle), which is located in the complementizer
+position:
+
+\begin{exe}
+    \ex{
+    \begin{xlist}
+        \ex{ No c-commanding QP  $\rightarrow$ BAD
+            \gll *\textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta. \\
+            Who-nom Hanako-nom apple-acc ate-Q asked \\
+            Intended: Who asked if Hanako ate an apple?}\\
+        \ex{ (Matrix) Wh is c-commanded by QP $\rightarrow$ GOOD
+        \gll \textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta-\textcolor{red}{no}. \\
+             Who-nom Hanako-nom apple-acc ate-Q asked-Q \\
+             Who asked if Hanako ate an apple?}\\
+        \ex{ (Embedded) Wh is c-commanded by QP $\rightarrow$ GOOD
+        \gll Hanako-ga [Keiko-ga \textcolor{red}{nani-o} tabeta-to] itta-\textcolor{red}{no}. \\
+                Hanako-nom Keiko-nom what-acc ate-Q said-Q \\
+                What did Hanako say that Keiko ate?}
+    \end{xlist}}
+\end{exe}
+
+\noindent
+**In addition, two wh-questions (matrix and embedded) can be licensed by a single QP!**
+\begin{exe}    
+    \ex{
+        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-to]
+              kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
+        Which student-nom teacher-nom what-acc order-did-dec in-detail asked-Q \\
+        Which student asked what the teacher ordered in detail?}\\
+        \label{ex:twowh}
+\end{exe}
+
+\section{Potential for Prediction Effects}
+Example \ref{ex:twowh} presents an \textbf{ambiguity at the embedded Wh} to the parser.
+\begin{center}
+``\textcolor{red}{Dono} gakusei-ga kyoushi-ga \textcolor{red}{nani-o}...'' $\rightarrow$ 1 or 2 QPs coming?
+\end{center}
+Either we have 1 QP which licenses both \textit{Dono} and \textit{nani-o} 
+or we have 2QPs, each within the CP of each Wh question. As below: \\
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+    \begin{center}
+        ``chuumon-shita-to kuwashi-ku tazunemashita-\textcolor{red}{ka}'' (Just matrix QP)\\ 
+        --OR-- \\
+        ``chuumon-shita-\textcolor{red}{ka} kuwashi-ku tazunemashita-\textcolor{red}{ka}'' (Both matrix and embedded QP)
+    \end{center}
+    }%
+}
+
+\begin{itemize}
+    \item It is presumed that the parser picks the option of 1QP as this prevents it from doing extra work to resolve
+    the licensing constraint.
+    \item We should, as a result of this prediction, observe surprise if we come across an embedded QP.
+\end{itemize}
+
+\section{Prediction vs. Integration}
+Let us compare what a predictive theory and an integrative theory would say about such items.
+
+
+
+
+
+
+
+
+\end{document}
