@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.3in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{setspace,graphicx,multirow,cite}
 
 % Title/Sections Package
@@ -17,9 +17,16 @@
 \titlespacing*{\subsection}{0pt}{1em}{0pt}
 \titlespacing*{\subsubsection}{0pt}{1em}{0pt}
 
-% Linguistics Packages
-\usepackage{xcolor}
+
+\def\blank{\medskip\hrule\medskip}
+\setlength\parindent{0pt}
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+
+\usepackage{xcolor,tikz}
 \usepackage{enumitem,float}
+\usepackage{wasysym}
 \usepackage[linguistics]{forest}
 \usepackage{gb4e}
 
@@ -27,7 +34,7 @@
 % Title
 \title{{\normalsize\bfseries {Prediction of Japanese Q-Particles}}}
 \author{\normalsize\bfseries {}}
-\date{}
+\date{\vspace{-10ex}}
 
 
 %%%%%%%%%%%%%%%%%%%%
@@ -35,57 +42,53 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\usetikzlibrary{topaths}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+
 \maketitle
 
-\tableofcontents
+\section{A Motivating Question}
+\textbf{Consider the following sentence:}
+\begin{center}
+    ``He has (really) (never) (...) \textcolor{blue}{gone}/\textcolor{red}{*go}/\textcolor{red}{*went} to Europe.''
+\end{center}
 
-\vspace{1.0cm}
+\begin{center}
+    It may not be surprising to see ``gone'' after the occurrence of ``has''.\\
+    But, when you see ``has'', do you predict something upcoming?\\
+    The claim of some (and myself): \textbf{Yes}.
+\end{center}
 
-\section{Detecting Structural Prediction}
-When it comes to the parser and syntactic structure:
+
+\textbf{If so:}
 \begin{itemize}
-    \item \textbf{What} is predicted?
-    \item \textbf{When} is it predicted?
-    \item \textbf{How} is it predicted?
+    \item What exactly do you predict? (``gone''? past-participle in general?)
+    \item When do you predict it? (when you reach ``has'', or?)
+    \item How do you predict it? (what knowledge informs your prediction?)
 \end{itemize}
 
-\noindent
-Some issues in answering these questions:
-\begin{itemize}
-    \item Surprise ($>$RT) and facilitation ($<$RT) effects often have multiple explanations.
-    \item A common explanation is that predictive effects are actually due to integration.
-\end{itemize}
-
-
-\noindent\fbox{%
-    \parbox{\textwidth}{%
-    \begin{center}
-        $AuxP \rightarrow [Aux \hspace{0.1cm} VP]$\\
-        $VP \rightarrow V'$\\
-        $ V' \rightarrow  [(Adv) \hspace{0.1cm} V]$\\
-        $V' \rightarrow [V \hspace{0.1cm} NP]$\\
-        \vspace{0.2cm}
-        ``He has (really) (never) (...) \textcolor{red}{gone} to Europe.'' \\
-        \vspace{0.2cm}
-        \textcolor{red}{What do we make of faciliation at ``gone''?}\\
-        \vspace{0.2cm}
-        \textcolor{red}{Does the parser know structural dependency btw. Aux and V positions?}\\
-        \vspace{0.2cm}
-        \textcolor{blue}{Need an experimental setup to separate effects!}
-    \end{center}
-    }%
-}
 \vspace{0.2cm}
 
+\textbf{A potential answer to these questions can be given at the level of syntax:}
 
-\section{Wh-Licensing w/ Q-particles}
-Let's look at Japanese.
+\begin{itemize}%[leftmargin=1em]
+    \renewcommand{\labelitemi}{$\Rightarrow$}
+    \item We predict structures by using structural information and deductions therefrom. (how/what)
+    \item This information is encoded at some trigger point in the input. (when)
+\end{itemize} 
+
+\vspace{0.2cm}
+\begin{center}
+    \textbf{But is this the case? Let's test...}
+\end{center}
 
 
+\blank
 
-In Japanese wh-interrogative sentences, a wh-phrase must be licensed (c-commanded)
-by a verbal suffix -ka or -no (a Question-particle), which is located in the complementizer
-position:
+\section{Some Japanese Data}
+In Japanese, wh-phrases must be c-commanded by 
+-ka or -no (a question particle), in the C position.
 
 \begin{exe}
     \ex{
@@ -94,60 +97,180 @@ position:
             \gll *\textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta. \\
             Who-nom Hanako-nom apple-acc ate-Q asked \\
             Intended: Who asked if Hanako ate an apple?}\\
-        \ex{ (Matrix) Wh is c-commanded by QP $\rightarrow$ GOOD
+        \ex{ (Matrix Wh) Wh is c-commanded by QP $\rightarrow$ GOOD
         \gll \textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta-\textcolor{red}{no}. \\
              Who-nom Hanako-nom apple-acc ate-Q asked-Q \\
              Who asked if Hanako ate an apple?}\\
-        \ex{ (Embedded) Wh is c-commanded by QP $\rightarrow$ GOOD
+        \ex{ (Embedded Wh) Wh is c-commanded by QP $\rightarrow$ GOOD
         \gll Hanako-ga [Keiko-ga \textcolor{red}{nani-o} tabeta-to] itta-\textcolor{red}{no}. \\
                 Hanako-nom Keiko-nom what-acc ate-Q said-Q \\
                 What did Hanako say that Keiko ate?}
     \end{xlist}}
 \end{exe}
 
-\noindent
-**In addition, two wh-questions (matrix and embedded) can be licensed by a single QP!**
+
+**Two wh-questions (matrix and embedded) can be licensed by a single matrix QP!**
 \begin{exe}    
     \ex{
         \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-to]
               kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
         Which student-nom teacher-nom what-acc order-did-dec in-detail asked-Q \\
-        Which student asked what the teacher ordered in detail?}\\
+        Which student asked what the teacher ordered in detail?}
         \label{ex:twowh}
 \end{exe}
 
-\section{Potential for Prediction Effects}
-Example \ref{ex:twowh} presents an \textbf{ambiguity at the embedded Wh} to the parser.
-\begin{center}
-``\textcolor{red}{Dono} gakusei-ga kyoushi-ga \textcolor{red}{nani-o}...'' $\rightarrow$ 1 or 2 QPs coming?
-\end{center}
-Either we have 1 QP which licenses both \textit{Dono} and \textit{nani-o} 
-or we have 2QPs, each within the CP of each Wh question. As below: \\
 
-\noindent\fbox{%
+\begin{center}
+    Example \ref{ex:twowh} presents an ambiguity to the parser.
+\end{center}
+\vspace{0.2cm}
+\fbox{%
     \parbox{\textwidth}{%
     \begin{center}
-        ``chuumon-shita-to kuwashi-ku tazunemashita-\textcolor{red}{ka}'' (Just matrix QP)\\ 
-        --OR-- \\
-        ``chuumon-shita-\textcolor{red}{ka} kuwashi-ku tazunemashita-\textcolor{red}{ka}'' (Both matrix and embedded QP)
+        ``\textcolor{red}{Dono} gakusei-ga kyoushi-ga \textcolor{red}{nani-o}...'' $\rightarrow$ is it 1 or 2 QPs coming?\\
+        \vspace{0.3cm}
+        chuumon-shita-to kuwashi-ku tazunemashita-\textcolor{red}{ka}'' \\(Just matrix QP)\\ 
+        \vspace{0.2cm}
+        chuumon-shita-\textcolor{red}{ka} kuwashi-ku tazunemashita-\textcolor{red}{ka}''\\ (Both matrix and embedded QP)
     \end{center}
     }%
 }
 
+\vspace{0.2cm}
+\begin{center}
+    \textbf{We can use this ambiguity to test for prediction.}
+\end{center}
+
+\blank
+
+\section{An Experiment}
+Using the data from above we can make an experiment to test for predictive effects.
+Assume the following conditions and an example item. Wh quetions and QPs are highlighted red.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cl|ll|}
+    \cline{3-4}
+    \multicolumn{1}{l}{}                               &      & \multicolumn{2}{c|}{\textbf{F1}} \\ \cline{3-4} 
+    \textbf{}                                          &      & \multicolumn{1}{l|}{1QP}   & 2QP  \\ \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{F2}}} & Dono (Which)   & \multicolumn{1}{l|}{Cond. A }    & Cond. B    \\ \cline{2-4} 
+    \multicolumn{1}{|c|}{}                             & Sono (That) & \multicolumn{1}{l|}{Cond. C}    & Cond. D    \\ \hline
+    \end{tabular}
+    \caption{Conditions for Experiment}
+    \label{table:exp2}
+\end{table}
+
+
+\begin{exe}    
+    \ex{
+        \begin{xlist}
+        \ex{
+        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-to]
+              kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
+        Which student-nom teacher-nom what-acc order-did-dec in-detail asked-Q \\
+        Which student asked what the teacher ordered in detail?}
+
+        \vspace{0.2cm}
+
+        \ex{
+        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-\textcolor{red}{ka}]
+              kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
+        Which student-nom teacher-nom what-acc order-did-Q in-detail asked-Q \\
+        Which student asked what the teacher ordered in detail?}
+
+        \vspace{0.2cm}
+
+        \ex{
+        \gll Sono gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-to]
+              kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
+        That student-nom teacher-nom what-acc order-did-dec in-detail asked-Q \\
+        What did that student ask in detail that the teacher ate?}
+        
+        \vspace{0.2cm}
+
+        \ex{
+        \gll Sono gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-\textcolor{red}{ka}]
+              kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
+        That student-nom teacher-nom what-acc order-did-Q in-detail asked-Q \\
+        What did that student ask in detail that the teacher ate?}
+        \end{xlist}
+    }
+\end{exe}
+
+\vspace{0.2cm}
+
+\textbf{Hypothesis: The human sentence processor is structurally predictive.}
 \begin{itemize}
-    \item It is presumed that the parser picks the option of 1QP as this prevents it from doing extra work to resolve
-    the licensing constraint.
-    \item We should, as a result of this prediction, observe surprise if we come across an embedded QP.
+    \item When? $\rightarrow$ Upon reaching each Wh (dono, nani-o)
+    \item What? $\rightarrow$ An upcoming QP in the first possible C position
+    \item How? $\rightarrow$ Employing (structural) knowledge that Wh questions are licensed by c-commanding QP in C position
 \end{itemize}
 
-\section{Prediction vs. Integration}
-Let us compare what a predictive theory and an integrative theory would say about such items.
+\vspace{0.2cm}
+
+\section{Expected Results}
+\textbf{Under the predictive hypothesis, we expect some things to happen for conditions A and B.}
+\begin{enumerate}
+    \item Matrix ``Dono'' triggers prediction of upcoming QP in Matrix C position.
+    \begin{center}
+        [_{CP} \tikz[baseline=(node1.base)]\node (node1) {Dono};
+        ...\tikz[baseline=(node2.base)]\node (node2) {-ka};]
+    \end{center}
+
+    \item Embedded ``nani-o'' triggers prediction of upcoming QP in (some) C position.\\
+    \begin{center}
+        [_{CP} \tikz[baseline=(node3.base)]\node (node3) {Dono}; 
+               gakusei-ga[_{CP} kyoushi-ga nani-o...]...
+               \tikz[baseline=(node4.base)]\node (node4) {-ka};]
+    \end{center}
+
+    \item Given the QP predicted by ``Dono'', the least effort is to assume nani-o ``covered'' 
+          by matrix QP. This is the case of condition A.\\
+    \begin{center}
+        [_{CP} \tikz[baseline=(node5.base)]\node (node5) {Dono};
+                gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node6.base)]\node (node6) {nani-o};...]
+                ...\tikz[baseline=(node7.base)]\node (node7) {-ka};]
+    \end{center}
+
+    \item If an embedded QP appears, we should observe slowdown at that point.
+          This is the case of condition B.\\
+    \begin{center}
+        [_{CP} \tikz[baseline=(node8.base)]\node (node8) {Dono};
+               gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node9.base)]\node (node9) {nani-o}; 
+               chuumon-shita\tikz[baseline=(node10.base)]\node (node10) {-ka};]
+               ...\tikz[baseline=(node11.base)]\node (node11) {-ka};]
+    \end{center}
+\end{enumerate}
+
+\begin{tikzpicture}[overlay]
+    \draw[-latex,red] (node2.north) to[bend right] (node1.north); % 1
+    \draw[-latex,red] (node4.north) to[bend right=15] (node3.north); %2
+    \draw[-latex,red] (node7.north) to[bend right=15] (node5.north); %3
+    \draw[-latex,red] (node7.north) to[bend right=15] (node6.north); %3
+    \draw[-latex,red] (node11.north) to[bend right=15] (node8.north); %4
+    \draw[-latex,red] (node10.north) to[bend right=15] (node9.north); %4
+\end{tikzpicture}
+
+\begin{center}
+\textbf{In condition B, a second (embedded) QP shows up. \\ We should observe a significant slowdown at that point compared to A.}
+\end{center}
 
 
+\blank
 
+\section{Why Important?}
+Showing significant slowdown at the embedded QP in Condition B is in accordance with our predictive hypothesis.\\
 
+What would other hypotheses say about the reading time at the embedded QP?
 
+\begin{itemize}
+    \item Integration: No slowdown is anticipated since the embedded QP should fit very well into the context of
+    a nearby Wh which it can license.
+    \item Others?
+\end{itemize}
 
-
+This experiment can successfully separate the predictions of these differing hypotheses. This experimental
+framework can be used in other studies to disambiguate competing theories of prediction, integration, etc.
+This has implications for theoretical space of possible parsers (i.e., what capabilities the parser should have).
 
 \end{document}
