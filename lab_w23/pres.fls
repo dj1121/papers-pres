@@ -1,6 +1,6 @@
-PWD c:\Users\devin\Downloads\lab_res
+PWD c:\Users\devin\OneDrive\Documents\Code\presentations-latex\lab_w23
 INPUT C:\Users\devin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\devin\Downloads\lab_res\pres.tex
+INPUT c:\Users\devin\OneDrive\Documents\Code\presentations-latex\lab_w23\pres.tex
 OUTPUT pres.log
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -611,6 +611,10 @@ INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tf
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT .\pres.toc
+INPUT pres.toc
+INPUT pres.toc
+OUTPUT pres.toc
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -620,9 +624,9 @@ INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 OUTPUT pres.pdf
 INPUT C:\Users\devin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\devin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT pres.aux
 INPUT C:\Users\devin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\devin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

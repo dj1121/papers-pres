@@ -37,37 +37,52 @@
 
 \maketitle
 
-\section{Detecting Structural Prediction}
-My work has been concerned with structural prediction by the parser. Namely,
-\textbf{what}, \textbf{when}, \textbf{why}? But verifying that the parser is performing 
-structural prediction in online processing is *hard*. Several reasons:
+\tableofcontents
 
+\vspace{1.0cm}
+
+\section{Detecting Structural Prediction}
+When it comes to the parser and syntactic structure:
+\begin{itemize}
+    \item \textbf{What} is predicted?
+    \item \textbf{When} is it predicted?
+    \item \textbf{How} is it predicted?
+\end{itemize}
+
+\noindent
+Some issues in answering these questions:
 \begin{itemize}
     \item Surprise ($>$RT) and facilitation ($<$RT) effects often have multiple explanations.
     \item A common explanation is that predictive effects are actually due to integration.
 \end{itemize}
 
-\noindent
-Consider the following example:
-\begin{exe}
-    \ex
-    \begin{xlist}
-        \ex $AuxP \rightarrow [Aux \hspace{0.1cm} VP]$
-        \ex $VP \rightarrow V'$
-        \ex $ V' \rightarrow  [(Adv) \hspace{0.1cm} V]$
-        \ex $V'\rightarrow [V \hspace{0.1cm} NP]$
-    \end{xlist}
-\end{exe}
-``He has (really) (never) (...) gone to Europe.''\\
 
-\noindent
-Consider we observe a facilitation at \textit{gone}. Is it due to parser's prediction triggered by
-\textit{has}? Or, is it because \textit{gone}....? Need an experiment with prediction and integration
-saying different things.
-
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+    \begin{center}
+        $AuxP \rightarrow [Aux \hspace{0.1cm} VP]$\\
+        $VP \rightarrow V'$\\
+        $ V' \rightarrow  [(Adv) \hspace{0.1cm} V]$\\
+        $V' \rightarrow [V \hspace{0.1cm} NP]$\\
+        \vspace{0.2cm}
+        ``He has (really) (never) (...) \textcolor{red}{gone} to Europe.'' \\
+        \vspace{0.2cm}
+        \textcolor{red}{What do we make of faciliation at ``gone''?}\\
+        \vspace{0.2cm}
+        \textcolor{red}{Does the parser know structural dependency btw. Aux and V positions?}\\
+        \vspace{0.2cm}
+        \textcolor{blue}{Need an experimental setup to separate effects!}
+    \end{center}
+    }%
+}
+\vspace{0.2cm}
 
 
 \section{Wh-Licensing w/ Q-particles}
+Let's look at Japanese.
+
+
+
 In Japanese wh-interrogative sentences, a wh-phrase must be licensed (c-commanded)
 by a verbal suffix -ka or -no (a Question-particle), which is located in the complementizer
 position:

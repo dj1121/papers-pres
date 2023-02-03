@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.2)  31 JAN 2023 14:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.10)  2 FEB 2023 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/devin/Downloads/lab_res/pres.tex
-(c:/Users/devin/Downloads/lab_res/pres.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-09-28> (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+**c:/Users/devin/OneDrive/Documents/Code/presentations-latex/lab_w23/pres.tex
+(c:/Users/devin/OneDrive/Documents/Code/presentations-latex/lab_w23/pres.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-12-17> (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -19,9 +19,9 @@ File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count190
 \c@figure=\count191
 \c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks16
@@ -39,17 +39,17 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@cnth=\count193
 \Gm@cntv=\count194
 \c@Gm@tempcnt=\count195
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
 \Gm@dimlist=\toks19
  (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
+Package: setspace 2022/12/04 v6.7b set line spacing
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
@@ -62,16 +62,14 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 107.
  (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-\stockwidth=\dimen147
-\stockheight=\dimen148
 ))
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip49
+\multirow@colwidth=\skip50
 \multirow@cntb=\count196
-\multirow@dima=\skip50
+\multirow@dima=\skip51
 \bigstrutjot=\dimen151
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -80,8 +78,8 @@ Package: cite 2015/02/27  v 5.5
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box51
-\beforetitleunit=\skip51
-\aftertitleunit=\skip52
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
 \ttl@plus=\dimen152
 \ttl@minus=\dimen153
 \ttl@toksa=\toks20
@@ -106,7 +104,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip53
+\labelindent=\skip54
 \enit@outerparindent=\dimen157
 \enit@toks=\toks21
 \enit@inbox=\box52
@@ -364,13 +362,13 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks38
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2022-09-28 L3 programming layer (loader) 
+Package: expl3 2022-12-17 L3 programming layer (loader) 
  (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box86
 ))
-Package: xparse 2022-06-22 L3 Experimental document command parser
+Package: xparse 2022-12-17 L3 Experimental document command parser
 ) (C:\Users\devin\AppData\Local\Programs\MiKTeX\tex/latex/inlinedef\inlinedef.sty
 Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
 \ID@toks=\toks39
@@ -433,7 +431,7 @@ Package: forest-lib-linguistics 2017/07/14 v0.1.2
 \wordtwo=\box93
 \wordthree=\box94
 \gline=\box95
-\glossglue=\skip54
+\glossglue=\skip55
 )
 \c@fnx=\count317
 \@xnumdepth=\count318
@@ -446,7 +444,7 @@ Package: forest-lib-linguistics 2017/07/14 v0.1.2
 \c@rxnumii=\count325
 \c@rxnumiii=\count326
 \c@rxnumiv=\count327
-\lcommentsep=\skip55
+\lcommentsep=\skip56
 ) (pres.aux)
 \openout1 = `pres.aux'.
 
@@ -522,50 +520,54 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 46.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 46.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 46.
+ (pres.toc)
+\tf@toc=\write5
+\openout5 = `pres.toc'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 55.
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 60--79
+[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 [1
 
 {C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 112--121
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 127--136
 [] 
  []
 
 [2] (pres.aux) ) 
 Here is how much of TeX's memory you used:
- 23756 strings out of 475385
- 575958 string characters out of 2776907
- 926774 words of memory out of 3000000
- 44817 multiletter control sequences out of 15000+600000
- 474422 words of font info for 45 fonts, out of 8000000 for 9000
+ 23763 strings out of 476406
+ 576330 string characters out of 2789567
+ 1859787 words of memory out of 3000000
+ 43800 multiletter control sequences out of 15000+600000
+ 517450 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,7n,94p,1630b,348s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 98i,7n,94p,1664b,354s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\devin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/devin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on pres.pdf (2 pages, 81311 bytes).
+Output written on pres.pdf (2 pages, 81082 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
