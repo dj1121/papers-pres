@@ -24,15 +24,18 @@
 \usepackage{amsthm}
 \newtheorem{definition}{Definition}
 
-\usepackage{xcolor,tikz}
+\usepackage{xcolor,soul}
+\usepackage{tikz}
 \usepackage{enumitem,float}
 \usepackage{wasysym}
 \usepackage[linguistics]{forest}
+\usepackage[normalem]{ulem}
 \usepackage{gb4e}
 
 
+
 % Title
-\title{{\normalsize\bfseries {Prediction of Japanese Q-Particles}}}
+\title{{\normalsize\bfseries {Japanese Q-Particles \& Predictive Parsing}}}
 \author{\normalsize\bfseries {}}
 \date{\vspace{-10ex}}
 
@@ -41,10 +44,6 @@
 % Main Document
 %%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
-\usetikzlibrary{topaths}
-\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
-
 
 \maketitle
 
@@ -55,53 +54,73 @@
 \end{center}
 
 \begin{center}
-    It may not be surprising to see ``gone'' after the occurrence of ``has''.\\
-    But, when you see ``has'', do you predict something upcoming?\\
-    The claim of some (and myself): \textbf{Yes}.
+    Let's say you observe reading speedup at \textit{gone}.\\
+    Why?\\
 \end{center}
 
-
-\textbf{If so:}
+\textbf{One possibility = You predicted it}
 \begin{itemize}
-    \item What exactly do you predict? (``gone''? past-participle in general?)
-    \item When do you predict it? (when you reach ``has'', or?)
-    \item How do you predict it? (what knowledge informs your prediction?)
+    \item What = VP_{+perf}
+    \item When = Reaching ``has''
+    \item How = TBD
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \begin{forest}
+        [TP
+            [DP
+                [He,roof]
+            ]
+            [T'
+                [T [\textcolor{red}{has},name=src]]
+                [VP_{+perf},draw,red]
+            ]
+            ]
+        ]
+    \end{forest}
+\end{figure}
+
+\textbf{Implications:}
+You have to know \textbf{a lot} to make good predictions
+\begin{itemize}
+    \item Parser is defined on categorical constituents (VP, DP, etc.) (a \textit{knowledge} claim)
+    \item Parser has access to relations between those constituents (X controls Y) (a \textit{knowledge} claim)
+    \item When seeing one part of a relation, it has a subprocess to predict the unseen part (a \textit{behaviour} 
+    claim)
+    \item And more...
 \end{itemize}
 
 \vspace{0.2cm}
-
-\textbf{A potential answer to these questions can be given at the level of syntax:}
-
-\begin{itemize}%[leftmargin=1em]
-    \renewcommand{\labelitemi}{$\Rightarrow$}
-    \item We predict structures by using structural information and deductions therefrom. (how/what)
-    \item This information is encoded at some trigger point in the input. (when)
-\end{itemize} 
-
-\vspace{0.2cm}
 \begin{center}
-    \textbf{But is this the case? Let's test...}
+    \textbf{Is the above (or something like it) the case?}
 \end{center}
 
 
 \blank
 
 \section{Some Japanese Data}
-In Japanese, wh-phrases must be c-commanded by 
--ka or -no (a question particle), in the C position.
+In Japanese, whs must be c-commanded by 
+-ka or -no (a question particle) in the C position.
 
 \begin{exe}
     \ex{
     \begin{xlist}
-        \ex{ No c-commanding QP  $\rightarrow$ BAD
+
+        \sethlcolor{red}
+        
+        \ex{ No c-commanding QP  $\rightarrow$ \hl{BAD}
             \gll *\textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta. \\
             Who-nom Hanako-nom apple-acc ate-Q asked \\
             Intended: Who asked if Hanako ate an apple?}\\
-        \ex{ (Matrix Wh) Wh is c-commanded by QP $\rightarrow$ GOOD
+
+        \sethlcolor{green}
+
+        \ex{ (Matrix Wh) Wh is c-commanded by QP $\rightarrow$ \hl{GOOD}
         \gll \textcolor{red}{Dare-ga} [Hanako-ga ringo-o tabeta-ka] tazuneta-\textcolor{red}{no}. \\
              Who-nom Hanako-nom apple-acc ate-Q asked-Q \\
              Who asked if Hanako ate an apple?}\\
-        \ex{ (Embedded Wh) Wh is c-commanded by QP $\rightarrow$ GOOD
+        \ex{ (Embedded Wh) Wh is c-commanded by QP $\rightarrow$ \hl{GOOD}
         \gll Hanako-ga [Keiko-ga \textcolor{red}{nani-o} tabeta-to] itta-\textcolor{red}{no}. \\
                 Hanako-nom Keiko-nom what-acc ate-Q said-Q \\
                 What did Hanako say that Keiko ate?}
@@ -121,7 +140,7 @@ In Japanese, wh-phrases must be c-commanded by
 
 
 \begin{center}
-    Example \ref{ex:twowh} presents an ambiguity to the parser.
+    \textbf{Example \ref{ex:twowh} presents an ambiguity to the parser.}
 \end{center}
 \vspace{0.2cm}
 \fbox{%
@@ -142,7 +161,7 @@ In Japanese, wh-phrases must be c-commanded by
 \end{center}
 
 \blank
-
+\newpage
 \section{An Experiment}
 Using the data from above we can make an experiment to test for predictive effects.
 Assume the following conditions and an example item. Wh quetions and QPs are highlighted red.
@@ -151,9 +170,9 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
     \centering
     \begin{tabular}{cl|ll|}
     \cline{3-4}
-    \multicolumn{1}{l}{}                               &      & \multicolumn{2}{c|}{\textbf{F1}} \\ \cline{3-4} 
+    \multicolumn{1}{l}{}                               &      & \multicolumn{2}{c|}{\textbf{\# QP}} \\ \cline{3-4} 
     \textbf{}                                          &      & \multicolumn{1}{l|}{1QP}   & 2QP  \\ \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{F2}}} & Dono (Which)   & \multicolumn{1}{l|}{Cond. A }    & Cond. B    \\ \cline{2-4} 
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Wh}}} & Dono (Which)   & \multicolumn{1}{l|}{Cond. A }    & Cond. B    \\ \cline{2-4} 
     \multicolumn{1}{|c|}{}                             & Sono (That) & \multicolumn{1}{l|}{Cond. C}    & Cond. D    \\ \hline
     \end{tabular}
     \caption{Conditions for Experiment}
@@ -199,14 +218,16 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
 
 \vspace{0.2cm}
 
-\textbf{Hypothesis: The human sentence processor is structurally predictive.}
+\textbf{Hypothesis:}
 \begin{itemize}
     \item When? $\rightarrow$ Upon reaching each Wh (dono, nani-o)
     \item What? $\rightarrow$ An upcoming QP in the first possible C position
-    \item How? $\rightarrow$ Employing (structural) knowledge that Wh questions are licensed by c-commanding QP in C position
 \end{itemize}
 
 \vspace{0.2cm}
+\newpage
+\usetikzlibrary{topaths}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
 
 \section{Expected Results}
 \textbf{Under the predictive hypothesis, we expect some things to happen for conditions A and B.}
@@ -225,7 +246,7 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
     \end{center}
 
     \item Given the QP predicted by ``Dono'', the least effort is to assume nani-o ``covered'' 
-          by matrix QP. This is the case of condition A.\\
+          by matrix QP. This is the case of \textbf{condition A}.\\
     \begin{center}
         [_{CP} \tikz[baseline=(node5.base)]\node (node5) {Dono};
                 gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node6.base)]\node (node6) {nani-o};...]
@@ -233,7 +254,7 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
     \end{center}
 
     \item If an embedded QP appears, we should observe slowdown at that point.
-          This is the case of condition B.\\
+          This is the case of \textbf{condition B}.\\
     \begin{center}
         [_{CP} \tikz[baseline=(node8.base)]\node (node8) {Dono};
                gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node9.base)]\node (node9) {nani-o}; 
@@ -258,19 +279,21 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
 
 \blank
 
-\section{Why Important?}
-Showing significant slowdown at the embedded QP in Condition B is in accordance with our predictive hypothesis.\\
+\section{Concluding Thoughts}
+Showing significant slowdown at the embedded QP in Condition B is in support of a structurally predictive parsing
+model. \\
 
-What would other hypotheses say about the reading time at the embedded QP?
-
+\textbf{More Questions:}
 \begin{itemize}
-    \item Integration: No slowdown is anticipated since the embedded QP should fit very well into the context of
-    a nearby Wh which it can license.
-    \item Others?
+    \item What other hypotheses could claim slowdown at embedded QP in Condition B?
+    \item What about the \textit{how}?
+        \begin{itemize}
+            \item Hypothesis generation method?
+            \item Stopping point?
+        \end{itemize}
+    \item Other Knowledge: Integrating frequency-based knowledge too?
+    \item Limitations: Assuming what relations do we \textit{not} see predictive behavior?
+    \item Acquisition: Learning to predict and predicting to learn?
 \end{itemize}
-
-This experiment can successfully separate the predictions of these differing hypotheses. This experimental
-framework can be used in other studies to disambiguate competing theories of prediction, integration, etc.
-This has implications for theoretical space of possible parsers (i.e., what capabilities the parser should have).
 
 \end{document}
