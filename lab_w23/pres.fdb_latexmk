@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1676315942 "c:/Users/devin/OneDrive/Documents/presentations/lab_w23/pres.tex" "pres.pdf" "pres" 1676315943 0
+["pdflatex"] 1676392753 "c:/Users/devin/OneDrive/Documents/presentations/lab_w23/pres.tex" "pres.pdf" "pres" 1676392755 0
   "C:/Users/devin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1676315562 106674 6fdb6f26d3edd73d8998a9a2bd4431f0 ""
   "C:/Users/devin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1674508139 14064 2f760b1b91f9306e73b382ccadcb5177 ""
   "C:/Users/devin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1670006829 10788010 e0a9e4a62191f27e2886130af1f892fe ""
@@ -152,9 +152,9 @@
   "C:/Users/devin/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/devin/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/devin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/devin/OneDrive/Documents/presentations/lab_w23/pres.tex" 1676315806 11433 daebf83e6456f1a22edb7c138c6387f4 ""
-  "pres.aux" 1676315943 1283 e03fb62e5136a329afb3baf971d718ed "pdflatex"
-  "pres.tex" 1676315806 11433 daebf83e6456f1a22edb7c138c6387f4 ""
+  "c:/Users/devin/OneDrive/Documents/presentations/lab_w23/pres.tex" 1676392753 11532 84b88f99202b5b3012340c87f7b18576 ""
+  "pres.aux" 1676392754 1373 891a746db368b52d59c8b0c2a310a733 "pdflatex"
+  "pres.tex" 1676392753 11532 84b88f99202b5b3012340c87f7b18576 ""
   (generated)
   "pres.aux"
   "pres.log"

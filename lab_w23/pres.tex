@@ -32,7 +32,8 @@
 \usepackage[normalem]{ulem}
 \usepackage{gb4e}
 
-
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 % Title
 \title{{\normalsize\bfseries {Japanese Q-Particles \& Predictive Parsing}}}
@@ -54,14 +55,8 @@
 \end{center}
 
 \begin{center}
-<<<<<<< HEAD
     Let's say you observe reading speedup at \textit{gone}.\\
     Why?\\
-=======
-    It may be unsurprising to see ``gone'' after the occurrence of ``has''.\\
-    But, when you see ``has'', do you predict something upcoming?\\
-    The claim of some (and myself): \textbf{Yes}.
->>>>>>> 523a8adeef16338cd278070b3a32ae1957c05f24
 \end{center}
 
 \textbf{One possibility = You predicted it}
@@ -170,27 +165,26 @@ In Japanese, whs must be c-commanded by
 \newpage
 \section{An Experiment}
 Using the data from above we can make an experiment to test for predictive effects.
-Assume the following conditions and an example item. Wh quetions and QPs are highlighted red.
+Assume the following conditions and an example item. Wh questions and QPs are highlighted red.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{cl|ll|}
     \cline{3-4}
     \multicolumn{1}{l}{}                               &      & \multicolumn{2}{c|}{\textbf{\# QP}} \\ \cline{3-4} 
-    \textbf{}                                          &      & \multicolumn{1}{l|}{1QP}   & 2QP  \\ \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Wh}}} & Dono (Which)   & \multicolumn{1}{l|}{Cond. A }    & Cond. B    \\ \cline{2-4} 
-    \multicolumn{1}{|c|}{}                             & Sono (That) & \multicolumn{1}{l|}{Cond. C}    & Cond. D    \\ \hline
+    \textbf{}                                          &      & \multicolumn{1}{l|}{1}   & 2  \\ \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Matrix Wh}}} & Yes   & \multicolumn{1}{l|}{Cond. A }    & Cond. B    \\ \cline{2-4} 
+    \multicolumn{1}{|c|}{}                             & No (Control) & \multicolumn{1}{l|}{Cond. C}    & Cond. D    \\ \hline
     \end{tabular}
     \caption{Conditions for Experiment}
     \label{table:exp2}
 \end{table}
 
-
 \begin{exe}    
     \ex{
         \begin{xlist}
         \ex{
-        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-to]
+        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-\circled{to}]
               kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
         Which student-nom teacher-nom what-acc order-did-dec in-detail asked-Q \\
         Which student asked what the teacher ordered in detail?}
@@ -198,7 +192,7 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
         \vspace{0.2cm}
 
         \ex{
-        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-\textcolor{red}{ka}]
+        \gll \textcolor{red}{Dono} gakusei-ga [kyoushi-ga \textcolor{red}{nani-o} chuumon-shita-\textcolor{red}{\circled{ka}}]
               kuwashi-ku tazunemashita-\textcolor{red}{ka}\\
         Which student-nom teacher-nom what-acc order-did-Q in-detail asked-Q \\
         Which student asked what the teacher ordered in detail?}
@@ -224,10 +218,10 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
 
 \vspace{0.2cm}
 
-\textbf{Hypothesis:}
+\textbf{Prediction Hypothesis:}
 \begin{itemize}
-    \item When? $\rightarrow$ Upon reaching each Wh (dono, nani-o)
-    \item What? $\rightarrow$ An upcoming QP in the first possible C position
+    \item When? $\rightarrow$ Upon reaching Wh (dono, nani-o)
+    \item What? $\rightarrow$ A upcoming licensing QP
 \end{itemize}
 
 \vspace{0.2cm}
@@ -236,50 +230,56 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
 \tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
 
 \section{Expected Results}
-\textbf{Under the predictive hypothesis, we expect some things to happen for conditions A and B.}
+Under predictive hypothesis, we hypothesize that the parser will do the following for conditions A/B.\\
+\textcolor{red}{Red arrows indicate licensor $\rightarrow$ licensee relation.}
 \begin{enumerate}
-    \item Matrix ``Dono'' triggers prediction of upcoming QP in Matrix C position.
+    \item Matrix ``Dono'' triggers prediction of upcoming QP licensor. First possible position is in Matrix C position.
     \begin{center}
         [_{CP} \tikz[baseline=(node1.base)]\node (node1) {Dono};
         ...\tikz[baseline=(node2.base)]\node (node2) {-ka};]
     \end{center}
 
-    \item Embedded ``nani-o'' triggers prediction of upcoming QP in (some) C position.\\
+    \item Embedded ``nani-o'' triggers prediction of upcoming licensor QP. First possible position is 
+         embedded C. However, given matrix QP predicted in step 1, least effort is to assume nani-o is \textit{also} licensed by it. We assume parser will not predict new QPs if one can already be licensor.\\
+          \begin{center}
+            [_{CP} \tikz[baseline=(node5.base)]\node (node5) {Dono};
+                    gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node6.base)]\node (node6) {nani-o};...]
+                    ...\tikz[baseline=(node7.base)]\node (node7) {-ka};]
+        \end{center}
+
+    \vspace{0.2cm}
+    \item Parser continues onward through the sentence with this hypothesis.
+    \item Parser reaches critical point, \hl{embedded C}.\\ Whatever comes up will confirm or deny its previous prediction (-to = not QP, -ka = QP)\\
     \begin{center}
-        [_{CP} \tikz[baseline=(node3.base)]\node (node3) {Dono}; 
-               gakusei-ga[_{CP} kyoushi-ga nani-o...]...
-               \tikz[baseline=(node4.base)]\node (node4) {-ka};]
+        [_{CP} \tikz[baseline=(node3.base)]\node (node3) {Dono};
+                gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node4.base)]\node (node4) {nani-o}; chuumon-shita-\circled{\hl{??}}...]
+                ...\tikz[baseline=(node12.base)]\node (node12) {-ka};]
     \end{center}
 
-    \item Given the QP predicted by ``Dono'', the least effort is to assume nani-o ``covered'' 
-          by matrix QP. This is the case of \textbf{condition A}.\\
-    \begin{center}
-        [_{CP} \tikz[baseline=(node5.base)]\node (node5) {Dono};
-                gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node6.base)]\node (node6) {nani-o};...]
-                ...\tikz[baseline=(node7.base)]\node (node7) {-ka};]
-    \end{center}
+    \vspace{0.2cm}
 
-    \item If an embedded QP appears, we should observe slowdown at that point.
-          This is the case of \textbf{condition B}.\\
+    \item If \textbf{Condition A}, the embedded C has ``-to'', which is not a QP. Keep the same analysis as in 4.
+    \item If \textbf{Condition B}, the embedded C has ``-ka'', which \textit{is} a QP. We should observe slowdown at its appearance due to reanalysis.\\
     \begin{center}
         [_{CP} \tikz[baseline=(node8.base)]\node (node8) {Dono};
                gakusei-ga[_{CP} kyoushi-ga \tikz[baseline=(node9.base)]\node (node9) {nani-o}; 
-               chuumon-shita\tikz[baseline=(node10.base)]\node (node10) {-ka};]
+               chuumon-shita\tikz[baseline=(node10.base)]\node (node10) {\hl{-ka}};]
                ...\tikz[baseline=(node11.base)]\node (node11) {-ka};]
     \end{center}
 \end{enumerate}
 
 \begin{tikzpicture}[overlay]
-    \draw[-latex,red] (node2.north) to[bend right] (node1.north); % 1
-    \draw[-latex,red] (node4.north) to[bend right=15] (node3.north); %2
-    \draw[-latex,red] (node7.north) to[bend right=15] (node5.north); %3
-    \draw[-latex,red] (node7.north) to[bend right=15] (node6.north); %3
-    \draw[-latex,red] (node11.north) to[bend right=15] (node8.north); %4
-    \draw[-latex,red] (node10.north) to[bend right=15] (node9.north); %4
+    \draw[-latex,red] (node2.north) to[bend right] (node1.north);
+    \draw[-latex,red] (node12.north) to[bend right=10] (node4.north);
+    \draw[-latex,red] (node12.north) to[bend right=5] (node3.north);
+    \draw[-latex,red] (node7.north) to[bend right=15] (node5.north);
+    \draw[-latex,red] (node7.north) to[bend right=15] (node6.north);
+    \draw[-latex,red] (node11.north) to[bend right=15] (node8.north);
+    \draw[-latex,red] (node10.north) to[bend right=15] (node9.north);
 \end{tikzpicture}
 
 \begin{center}
-\textbf{In condition B, a second (embedded) QP shows up. \\ We should observe a significant slowdown at that point compared to A.}
+\textbf{In condition B, a second (embedded) QP shows up. \\ Reanalysis of embedded WH licensing causes slowdown compared to A.}
 \end{center}
 
 
@@ -289,7 +289,6 @@ Assume the following conditions and an example item. Wh quetions and QPs are hig
 Showing significant slowdown at the embedded QP in Condition B is in support of a structurally predictive parsing
 model. \\
 
-<<<<<<< HEAD
 \textbf{More Questions:}
 \begin{itemize}
     \item What other hypotheses could claim slowdown at embedded QP in Condition B?
@@ -303,15 +302,4 @@ model. \\
     \item Acquisition: Learning to predict and predicting to learn?
 \end{itemize}
 
-=======
-\begin{enumerate}
-    \item No slowdown is anticipated since the embedded QP should fit very well into the context of
-    a nearby Wh which it can license.
-    \item Others? ***
-\end{enumerate}
-
-This experiment can successfully separate the predictions of these differing hypotheses.
-This also has implications for theoretical space of possible parsers (i.e., what capabilities the parser should have).
-
->>>>>>> 523a8adeef16338cd278070b3a32ae1957c05f24
 \end{document}
