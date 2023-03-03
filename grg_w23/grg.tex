@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%
+% Header Stuff
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{setspace,graphicx,multirow,cite}
+
+% Title/Sections Package
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+\titlespacing*{\section}{0pt}{1em}{0pt}
+\titlespacing*{\subsection}{0pt}{1em}{0pt}
+\titlespacing*{\subsubsection}{0pt}{1em}{0pt}
+\bibliographystyle{plain}
+
+
+\def\blank{\medskip\hrule\medskip}
+% \setlength\parindent{0pt}
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+
+\usepackage{xcolor,soul}
+\usepackage{tikz}
+\usepackage{enumitem,float}
+\usepackage{wasysym}
+\usepackage[linguistics]{forest}
+\usepackage[normalem]{ulem}
+\usepackage{gb4e}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+% Title
+\title{{\normalsize\bfseries {GRG Proposal}}}
+\author{\normalsize {Devin Johnson}}
+\date{\vspace{-10ex}}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Main Document
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\vspace{5ex}
+
+I am applying for the GRG to run a 2x2 acceptability study on Prolific, with each participant costing \$6.00 for a 30-45 minute experiment, plus \$2.00 in Prolific fees per participant. I intend to run 62 participants for a total of \$496. This experiment will support current research which will be used for my qualifying paper.
+
+My research is concerned with the capabilities of human sentence processing. It has been claimed that human sentence processing makes use of strucutral prediction \cite{Kazanina2017,Yoshida-Dickey-Sturt2013}. However, creating an empirical test for this is difficult given that many hypotheses make the exact same claims about reading time speedups/slowdowns at the exact same places in the input. For example, one hypothesis might claim that that an element X simply integrates more easily with the existing structure, resulting in a speedup in its reading. However, another hypothesis might claim that the parser avails itself of the knowledge it has of structural relations between X and some previously-seen element Y in order to make a (structural) prediction at the point of seeing Y. I will call these hypotheses the integration and prediction hypotheses, respectively. I am interested in testing these hypotheses.
+
+I propose an experiment which allows us to distinguish between (structural) prediction and integration sentence processing hypotheses. Given previous work in sentence processing, it is known that comprehenders, upon encountering reflexives such as \textit{himself}, \textit{herself}, etc., begin a search for a corresponding antecedent \cite{Sturt2003,Kazanina-Lau-Lieberman-Yoshida-Phillips2007}. I wish to exploit this in order to test between hypotheses. I have therefore designed a 2x2 factorial reading experiment, manipulating Antecedent x Reflexive:
+\begin{exe}
+    \ex{Which \{developer's/innovative\}_{+/-Antecedent} idea to create \{himself/John\}_{+/-Reflexive} a website \textcolor{blue}{do} the managers think that the clients endorse?}
+\end{exe}
+The prediction hypothesis is that upon encountering \textit{himself} in an incremental reading task, readers will posit a singular antecedent for it in the next possible position, if it is not provided already. This position is the spec TP of the following clause. Importantly, this position controls the plurality of the aux (do/does), allowing the reader to predict a singular \textit{does}. Thus, our alternative hypothesis is an interaction effect showing a significant slowdown at \textit{do} only in the condition with -Antecedent and +Reflexive \textit{himself}, given that its occurence does not match the prediction. This is contrasted with the integration hypothesis, which makes no claim for faster/slower reading time at the aux.
+
+However, the experiment above rests upon the assumption that \textit{himself} indeed highly prefers a singular antecedent present in the sentence. While this assumption is intuitive, I will first perform an acceptability judgment experiment with items following the template below to confirm this. If this is the case, the -Antecedent +Reflexive condition should be highly unacceptable in comparison to others. It is for funding this preliminary experiment that I am applying for the GRG funds.
+\begin{exe}
+    \ex{Which \{developer's/innovative\}_{+/-Antecedent} idea to create \{himself/John\}_{+/-Reflexive} a website \textcolor{blue}{do} the managers endorse?}
+\end{exe}
+
+
+\newpage
+\bibliography{grg}
+
+\end{document}
